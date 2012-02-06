@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+
+class_name = ARGV[0]
+
+class MyVars
+  def initialize(class_name)
+    @class_name = class_name
+  end
+end
+
+Dir.glob("./templates/*.erb") do |file|
+  erb_template = ERB.new File.open(file, 'r').read
+  erb_result = erb_template.result(MyVars.new(class_name).send(:binding))
+
+  # Remove the path from the filename
+  file_name = File.basename file
+  # Remove .erb from the filename, and replace
+  # the 'class_name' from the file name
+  new_file_name = file_name.gsub(/.erb/, '').gsub(/class_name/, class_name)
+
+  # Create a new file, writing the erb template result 
+  new_file = File.new(new_file_name, 'w')
+  new_file.write erb_result
+  new_file.close
+end
