@@ -2,23 +2,29 @@
 
 require 'erb'
 
-class_name = ARGV[0]
-
 class MyVars
-  def initialize(class_name)
-    @class_name = class_name
+  def initialize(class_name, class_name_underscore)
+    @class_name            = class_name
+    @class_name_underscore = class_name_underscore
   end
 end
 
+class_name = ARGV[0]
+# Dirt simple way to convert 'AbcDef' to 'abc_def'
+class_name_underscore = class_name.gsub(/(.)([A-Z])/, '\1_\2').downcase
+
+var_binding = MyVars.new(class_name, class_name_underscore).send(:binding)
+
 Dir.glob("#{File.dirname(__FILE__)}/../templates/*.erb") do |file|
   erb_template = ERB.new File.open(file, 'r').read
-  erb_result = erb_template.result(MyVars.new(class_name).send(:binding))
+  erb_result = erb_template.result(var_binding)
 
-  # Remove the path from the filename
+  # Remove the path from the file string
   file_name = File.basename file
+
   # Remove .erb from the filename, and replace
-  # the 'class_name' from the file name
-  new_file_name = file_name.gsub(/.erb/, '').gsub(/class_name/, class_name)
+  # the 'class_name' placeholder from the file name
+  new_file_name = file_name.gsub(/.erb/, '').gsub(/class_name/, class_name_underscore)
 
   puts "Creating: #{new_file_name}"
 

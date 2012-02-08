@@ -1,1 +1,16 @@
-Class: <%= @class_name %>
+# <%= @class_name %>
+
+Description and usage:
+
+    require '<%= @class_name_underscore %>'
+    <%= @class_name %>.new
+
+# Running the tests
+
+Install the rspec gem
+
+    gem install rspec
+
+Run the spec
+
+    rspec <%= @class_name_underscore %>_spec.rb
