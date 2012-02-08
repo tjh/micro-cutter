@@ -38,5 +38,5 @@ Update the gist from your new MicroGem:
 # Credits
 
 * **[@jkreeftmeijer](http://twitter.com/jkreeftmeijer)** for coming up with the killer MicroGem concept<br/> (http://jeffkreeftmeijer.com/2011/microgems-five-minute-rubygems/)
-* **[@moutten](http://twitter.com/moutten)** for heckling me as I coded this
-* **[@mettaaudio](http://twitter.com/mettaaudio)** for not laughing too badly as I hacked this together over lunch and made countless typos
+* **[@moutten](http://twitter.com/moutten)** for helping me through the file name handling and generally making me a better Ruby developer every day
+* **[@mettaaudio](http://twitter.com/mettaaudio)** for not laughing too loudly as I hacked this together over lunch and made countless typos
