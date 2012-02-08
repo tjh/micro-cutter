@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name        = 'mini-cutter'
   s.summary     = 'Mini Cutter: create the boilerplate files needed for a mini-gem'
   s.description = 'Quick tool for building out a quick set of files needed to make a micro-gem'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.platform    = Gem::Platform::RUBY
 
   s.files         = Dir['bin/*'] + Dir['templates/*']

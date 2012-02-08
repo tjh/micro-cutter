@@ -10,7 +10,7 @@ class MyVars
   end
 end
 
-Dir.glob("./templates/*.erb") do |file|
+Dir.glob("#{File.dirname(__FILE__)}/../templates/*.erb") do |file|
   erb_template = ERB.new File.open(file, 'r').read
   erb_result = erb_template.result(MyVars.new(class_name).send(:binding))
 
@@ -19,6 +19,8 @@ Dir.glob("./templates/*.erb") do |file|
   # Remove .erb from the filename, and replace
   # the 'class_name' from the file name
   new_file_name = file_name.gsub(/.erb/, '').gsub(/class_name/, class_name)
+
+  puts "Creating: #{new_file_name}"
 
   # Create a new file, writing the erb template result 
   new_file = File.new(new_file_name, 'w')
