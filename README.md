@@ -28,8 +28,7 @@ Head to gist.github.com and create a gist:
 
 Update the gist from your new MicroGem:
 
-    git clone git@gist.github.com:YOUR_GIST_ID.git
-YOUR_DESIRED_FOLDER_NAME
+    git clone git@gist.github.com:YOUR_GIST_ID.git YOUR_DESIRED_FOLDER_NAME
     cd YOUR_DESIRED_FOLDER_NAME
     mini-cutter YourClassName
     git add .
