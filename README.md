@@ -1,14 +1,14 @@
-# Mini Cutter
+# Micro Cutter
 ------------
 
-Create the base files needed for a mini gem (potentially stored in a
+Create the base files needed for a micro gem (potentially stored in a
 gist).
 
 # Usage
 
 Call the executable, passing a camel cased class name:
 
-    mini-cutter ActsAsBoolean
+    micro-cutter ActsAsBoolean
 
 This creates boilerplate files (overwriting any already there):
 
@@ -30,7 +30,7 @@ Update the gist from your new MicroGem:
 
     git clone git@gist.github.com:YOUR_GIST_ID.git YOUR_DESIRED_FOLDER_NAME
     cd YOUR_DESIRED_FOLDER_NAME
-    mini-cutter YourClassName
+    micro-cutter YourClassName
     git add .
     git commit -v
     git push origin master
